@@ -4,7 +4,7 @@ function APIRequest() {
     var city = (document.getElementsByName("city")[0]).value;
     if (city != '') {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', "http://api.openweathermap.org/data/2.5/weather?q=" + city +
+        xhr.open('GET', "//api.openweathermap.org/data/2.5/weather?q=" + city +
             "&units=imperial" + "&APPID=" + _appID);
         xhr.onload = function () {
             if (xhr.status === 200) {
@@ -18,7 +18,7 @@ function APIRequest() {
             }
         };
         var xhr1 = new XMLHttpRequest();
-        xhr1.open('GET', "http://api.openweathermap.org/data/2.5/forecast?q=" + city +',us'+
+        xhr1.open('GET', "//api.openweathermap.org/data/2.5/forecast?q=" + city +',us'+
             "&units=imperial" + "&APPID=" + _appID);
 		APIRequest5days(xhr1);
 
@@ -47,7 +47,7 @@ function ApIRequestpoints(latitude, longitude) {
     var city = (document.getElementsByName("city")[0]).value;
     if (latitude != '' && longitude != "") {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude +
+        xhr.open('GET', "//api.openweathermap.org/data/2.5/weather?lat=" + latitude +
             "&lon=" + longitude + "&units=imperial" +"&APPID=" + _appID);
         xhr.onload = function () {
             if (xhr.status === 200) {
@@ -61,7 +61,7 @@ function ApIRequestpoints(latitude, longitude) {
             }
         };
         var xhr1 = new XMLHttpRequest();
-        xhr1.open('GET', "http://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + '&lon=' + longitude +
+        xhr1.open('GET', "//api.openweathermap.org/data/2.5/forecast?lat=" + latitude + '&lon=' + longitude +
             "&units=imperial" + "&APPID=" + _appID);
         APIRequest5days(xhr1);
 
@@ -77,7 +77,7 @@ function ApIRequestpoints(latitude, longitude) {
 function show(data) {
     return "<div><strong>City Name</strong>: " + data.name + "," + data.sys.country + "</div>" +
         "<div><strong>Temperature</strong>: " + data.main.temp + " F° " + " [" + data.main.temp_min + "°F ~ " + data.main.temp_max + "°F] " + "</div>" +
-        "<div><strong>Descrpition</strong>: <img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>" + data.weather[0].description + "</div>" +
+        "<div><strong>Descrpition</strong>: <img src='//openweathermap.org/img/w/" + data.weather[0].icon + ".png'>" + data.weather[0].description + "</div>" +
         "<div><strong>Weather</strong>: " + data.weather[0].main + "</div>" +
         "<div><strong>Humidity</strong>: " + data.main.humidity + " % " + "</div>" +
         "<div><strong>Wind</strong>: " + data.wind.speed + " mph " +","+ data.wind.deg + " degree " + "</div>" +
